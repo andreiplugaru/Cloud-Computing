@@ -5,8 +5,12 @@ const getAllUsers = async (req, res) => {
     response(res, users)
 }
 const registerUser = async (req, res) => {
+    try{
     const user = await userService.registerUser(req.body);
-    response(res, user)
+    response(res, user)}
+    catch(error){
+        response(res, {message: error.message}, error.status);
+    }
 }
 
 module.exports = { getAllUsers, registerUser };

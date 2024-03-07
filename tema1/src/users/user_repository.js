@@ -2,10 +2,16 @@ const User = require('./user');
 
 class UserRepository {
     async getAllUsers() {
-        return await User.find();
+        return User.find();
     }
     async registerUser(user) {
         return User.create(user);
+    }
+    async getUserById(userId) {
+        return User.findById(userId);
+    }
+    async getUserByEmail(email) {
+        return User.findOne({email: email});
     }
 }
 
