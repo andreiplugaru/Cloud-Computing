@@ -1,7 +1,9 @@
 const userController = require('../users/user_controller');
 const {validateUser} = require('../validation/userValidation');
 const {validatePost, validatePutPost} = require('../posts/post_validation');
+const {validateLike} = require('../likes/like_validation');
 const postController = require('../posts/post_controller');
+const likeController = require('../likes/like_controller');
 const routes = {
     "/users": {
         GET: (req, res) => {
@@ -10,12 +12,6 @@ const routes = {
         POST: (req, res) => {
             validateUser(req, res, userController.registerUser);
         }
-    },
-    "/:id": {
-        GET: (req, res) => {
-            res.writeHead(200, {"Content-Type": "text/plain"});
-            res.end("Hello World2");
-        },
     },
     "/posts": {
         GET: (req, res) => {
@@ -26,14 +22,25 @@ const routes = {
             validatePost(req, res, postController.addPost);
         },
     },
-    "/posts/:email": {
+    "/posts/users/:email": {
         GET: (req, res) => {
-           postController.getPostsForUser(req, res);
-        },
+            postController.getPostsForUser(req, res);
+        }
+    },
+    "/posts/:id": {
         PUT: (req, res) => {
-            req.params.id = req.params.email;
-            delete req.params.email;
             validatePutPost(req, res, postController.updatePost);
+        },
+        DELETE: (req, res) => {
+            postController.deletePost(req, res);
+        }
+    },
+    "/likes": {
+        POST: (req, res) => {
+            validateLike(req, res, likeController.addLike);
+        },
+        DELETE: (req, res) => {
+            validateLike(req, res, likeController.removeLike);
         }
     },
     notFound: (_req, res) => {

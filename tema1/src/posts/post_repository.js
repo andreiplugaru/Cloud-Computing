@@ -2,7 +2,7 @@ let Post = require('./post');
 let Like = require('../likes/like');
 class PostRepository{
     async getPostsForUser(userEmail){
-        return Post.find({userEmail: userEmail}).populate('likes');
+        return Post.find({userEmail: userEmail}).populate('likes').exec();
     }
     async addPost(post){
         return Post.create(post);
@@ -12,6 +12,14 @@ class PostRepository{
     }
     async getPostById(postId){
         return Post.findById(postId);
+    }
+    async deletePost(postId){
+        return Post.findByIdAndDelete(postId);
+    }
+    async addLike(postId, like){
+        let post = await Post.findById(postId);
+        post.likes.push(like);
+        return post.save();
     }
 }
 

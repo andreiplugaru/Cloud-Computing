@@ -1,7 +1,6 @@
 let mongoose = require('mongoose');
 const {Schema} = require("mongoose");
 let uuid = require('uuid');
-
 let postSchema = new mongoose.Schema({
     _id: {
         type: String,
@@ -19,7 +18,7 @@ let postSchema = new mongoose.Schema({
         ref: 'User'
     },
     likes: [{
-        type: Schema.Types.UUID,
+        type: String,
         ref: 'Like'
     }]
 })
