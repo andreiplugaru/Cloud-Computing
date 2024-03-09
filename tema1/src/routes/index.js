@@ -13,6 +13,11 @@ const routes = {
             validateUser(req, res, userController.registerUser);
         }
     },
+    "/users/:id": {
+        PUT: (req, res) => {
+            validateUser(req, res, userController.updateUser);
+        }
+    },
     "/posts": {
         GET: (req, res) => {
             res.writeHead(200, {"Content-Type": "text/plain"});
@@ -22,7 +27,7 @@ const routes = {
             validatePost(req, res, postController.addPost);
         },
     },
-    "/posts/users/:email": {
+    "/posts/users/:userId": {
         GET: (req, res) => {
             postController.getPostsForUser(req, res);
         }

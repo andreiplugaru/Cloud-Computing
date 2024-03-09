@@ -13,4 +13,15 @@ const registerUser = async (req, res) => {
     }
 }
 
-module.exports = { getAllUsers, registerUser };
+const updateUser = async (req, res) => {
+    try{
+        const user = await userService.updateUser(req.params.id, req.body);
+        response(res, user, 201);
+    }
+    catch(error){
+        response(res, {message: error.message}, error.status);
+    }
+
+}
+
+module.exports = { getAllUsers, registerUser, updateUser };

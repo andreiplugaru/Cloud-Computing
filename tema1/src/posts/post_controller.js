@@ -11,8 +11,13 @@ const addPost = async (req, res) => {
 }
 
 const getPostsForUser = async (req, res) => {
-    const posts = await postService.getPostsForUser(req.params.email);
-    response(res, posts);
+    try {
+        const posts = await postService.getPostsForUser(req.params.userId);
+        response(res, posts);
+    }
+    catch (error) {
+        response(res, { message: error.message }, error.status);
+    }
 }
 
 const updatePost = async (req, res) => {

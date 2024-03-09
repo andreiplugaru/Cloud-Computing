@@ -13,6 +13,10 @@ class UserRepository {
     async getUserByEmail(email) {
         return User.findOne({email: email});
     }
+
+    async updateUser(userId, user) {
+        return User.findByIdAndUpdate(userId, user, {new: true});
+    }
 }
 
 module.exports = UserRepository;

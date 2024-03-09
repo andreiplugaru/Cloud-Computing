@@ -13,7 +13,7 @@ let postSchema = new mongoose.Schema({
     content: {
         type: String
     },
-    userEmail:{
+    userId:{
         type: String,
         ref: 'User'
     },

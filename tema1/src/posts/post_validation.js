@@ -5,11 +5,11 @@ const validatePost = async (req, res, next) => {
     try {
         let parsedBody = await getPostBody(req);
 
-        if (parsedBody.title && parsedBody.content && parsedBody.userEmail) {
+        if (parsedBody.title && parsedBody.content && parsedBody.userId) {
             req.body = parsedBody;
             next(req, res);
         } else {
-            response(res, { message: "Title, content and userEmail are required" }, 400);
+            response(res, { message: "Title, content and userId are required" }, 400);
         }
     }
     catch (error) {
@@ -20,11 +20,11 @@ const validatePutPost = async (req, res, next) => {
     try {
         let parsedBody = await getPostBody(req);
 
-        if (parsedBody._id && parsedBody.title && parsedBody.content && parsedBody.userEmail) {
+        if (parsedBody._id && parsedBody.title && parsedBody.content && parsedBody.userId) {
             req.body = parsedBody;
             next(req, res);
         } else {
-            response(res, { message: "_id, title, content and userEmail are required" }, 400);
+            response(res, { message: "_id, title, content and userId are required" }, 400);
         }
     }
     catch (error) {

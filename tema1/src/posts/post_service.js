@@ -7,21 +7,21 @@ class PostService{
     }
 
     async addPost(post){
-        let user = await this.userService.getUserByEmail(post.userEmail);
+        let user = await this.userService.getUserById(post.userId);
         if(user == null)
             throw new HttpException(404, "User not found");
        return await this.postRepository.addPost(post);
     }
 
-    async getPostsForUser(userEmail){
-        let user = await this.userService.getUserByEmail(userEmail);
+    async getPostsForUser(userId){
+        let user = await this.userService.getUserById(userId);
         if(user == null)
             throw new HttpException(404, "User not found");
-        return await this.postRepository.getPostsForUser(userEmail);
+        return await this.postRepository.getPostsForUser(userId);
     }
 
     async updatePost(postId, post){
-        let user = await this.userService.getUserByEmail(post.userEmail);
+        let user = await this.userService.getUserById(post.userId);
         if(user == null)
             throw new HttpException(404, "User not found");
         if(postId !== post._id)

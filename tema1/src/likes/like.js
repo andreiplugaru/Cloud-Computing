@@ -6,7 +6,7 @@ let likeSchema = new mongoose.Schema({
         type: String,
         default: () => uuid.v4()
     },
-    userEmail: {
+    userId: {
         type: String,
         ref: 'User'
     },

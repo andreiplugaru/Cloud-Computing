@@ -18,6 +18,9 @@ class UserService{
     async getUserByEmail(email){
         return await this.userRepository.getUserByEmail(email);
     }
+    async updateUser(userId, user){
+        return await this.userRepository.updateUser(userId, user);
+    }
 }
 
 module.exports = UserService;

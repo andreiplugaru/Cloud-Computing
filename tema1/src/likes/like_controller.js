@@ -11,7 +11,7 @@ const addLike = async (req, res) => {
 }
 const removeLike = async (req, res) => {
     try{
-        const like = await likeService.removeLike(req.body.userEmail, req.body.postId);
+        const like = await likeService.removeLike(req.body.userId, req.body.postId);
         response(res, like, 204)
     }
     catch(error){
