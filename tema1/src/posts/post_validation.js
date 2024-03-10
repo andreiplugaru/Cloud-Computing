@@ -20,7 +20,7 @@ const validatePutPost = async (req, res, next) => {
     try {
         let parsedBody = await getPostBody(req);
 
-        if (parsedBody._id && parsedBody.title && parsedBody.content && parsedBody.userId) {
+        if (parsedBody.title && parsedBody.content && parsedBody.userId) {
             req.body = parsedBody;
             next(req, res);
         } else {

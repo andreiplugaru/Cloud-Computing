@@ -19,6 +19,10 @@ class UserService{
         return await this.userRepository.getUserByEmail(email);
     }
     async updateUser(userId, user){
+       let userInDB =  await this.userRepository.getUserByEmail(user.email)
+        if(userInDB && userInDB._id !== userId){
+            throw new HttpException(409, "Email already in use");
+        }
         return await this.userRepository.updateUser(userId, user);
     }
 }

@@ -2,7 +2,6 @@ const http = require("http");
 const url = require("url");
 
 const routes = require("./routes");
-// const { loggerMiddleware } = require("./middlewares");
 
 const PORT = process.env.PORT || 4000;
 
@@ -59,7 +58,6 @@ const server = http.createServer((req, res) => {
     handler(req, res);
 });
 
-// global middleware
-// server.on("request", loggerMiddleware);
 
-server.listen(PORT, () => console.log(`server listening on port: ${PORT}`));
+server.listen(PORT,
+    () => console.log(`server listening on port: ${PORT}`));

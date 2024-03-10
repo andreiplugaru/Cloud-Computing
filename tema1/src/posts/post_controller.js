@@ -22,8 +22,15 @@ const getPostsForUser = async (req, res) => {
 
 const updatePost = async (req, res) => {
     try {
-        const post = await postService.updatePost(req.params.id, req.body);
-        response(res, post, 201);
+        const updatedPost = await postService.updatePost(req.params.id, req.body);
+        if(updatedPost !== null) {
+            response(res, updatedPost, 204);
+        }
+        else{
+            const newPost = await postService.addPost(req.body);
+            response(res, newPost, 201);
+
+        }
     }
     catch (error) {
         response(res, { message: error.message }, error.status);

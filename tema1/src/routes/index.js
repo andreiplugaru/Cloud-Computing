@@ -50,7 +50,7 @@ const routes = {
     },
     notFound: (_req, res) => {
         res.writeHead(404, {"Content-Type": "application/json"});
-        res.end(JSON.stringify({message: "requested resource not found!"}));
+        res.end(JSON.stringify({message: "Requested route was not found!"}));
     },
 }
 

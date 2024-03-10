@@ -23,7 +23,7 @@ class LikeService{
     async removeLike(userId, postId){
         let like = await this.likeRepository.getLikeForUserAndPost(userId, postId);
         if (like == null)
-            throw new HttpException(404, "There is no like for this user and email");
+            throw new HttpException(404, "There is no like for this user and post");
         return await this.likeRepository.removeLike(like._id);
     }
 }

@@ -20,18 +20,11 @@ class PostService{
         return await this.postRepository.getPostsForUser(userId);
     }
 
-    async updatePost(postId, post){
+    async updatePost(post_id, post){
         let user = await this.userService.getUserById(post.userId);
         if(user == null)
             throw new HttpException(404, "User not found");
-        if(postId !== post._id)
-            throw new HttpException(400, "The id of the post cannot be changed");
-        if(uuid.validate(postId) === false || uuid.validate(post._id) === false)
-            throw new HttpException(400, "Invalid id");
-        let currentPost = await this.postRepository.getPostById(postId);
-        if(currentPost == null)
-            return await this.postRepository.addPost(post);
-        return await this.postRepository.updatePost(postId, post);
+        return await this.postRepository.updatePost(post_id, post);
     }
     async getPostById(postId){
         return await this.postRepository.getPostById(postId);

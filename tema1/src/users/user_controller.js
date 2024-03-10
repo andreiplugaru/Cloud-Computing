@@ -15,8 +15,14 @@ const registerUser = async (req, res) => {
 
 const updateUser = async (req, res) => {
     try{
-        const user = await userService.updateUser(req.params.id, req.body);
-        response(res, user, 201);
+        const updatedUser = await userService.updateUser(req.params.id, req.body);
+        if(updatedUser != null){
+            response(res, updatedUser, 204);
+        }
+        else {
+            const newUser = await userService.registerUser(req.body);
+            response(res, newUser, 201);
+        }
     }
     catch(error){
         response(res, {message: error.message}, error.status);
