@@ -17,7 +17,6 @@ const server = http.createServer((req, res) => {
         const routeKeys = Object.keys(routes).filter((key) => key.includes(":"));
 
         const matchedKey = routeKeys.find((key) => {
-            // replacing each segment of the key that starts with a colon (:)
             const regex = new RegExp(`^${key.replace(/:[^/]+/g, "([^/]+)")}$`);
             return regex.test(path);
         });

@@ -1,5 +1,5 @@
 class HttpException{
-    constructor(status, message, data){
+    constructor(status, message){
         this.status = status;
         this.message = message;
     }
