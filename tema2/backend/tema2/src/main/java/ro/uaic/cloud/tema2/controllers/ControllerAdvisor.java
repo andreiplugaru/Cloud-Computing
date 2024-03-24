@@ -1,20 +1,21 @@
 package ro.uaic.cloud.tema2.controllers;
 
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.annotation.RestControllerAdvice;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import ro.uaic.cloud.tema2.dtos.ErrorResponse;
 import ro.uaic.cloud.tema2.exceptions.EdenResponseException;
+import ro.uaic.cloud.tema2.exceptions.MultiavatarException;
 
-@RestControllerAdvice
+@ControllerAdvice
 public class ControllerAdvisor {
     @ResponseBody
     @ExceptionHandler({
-          EdenResponseException.class
+          EdenResponseException.class,
+            MultiavatarException.class
     })
-    @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public String edenExceptionHandler(RuntimeException ex) {
-        return ex.getMessage();
+    public ResponseEntity<ErrorResponse> exceptionHandler(RuntimeException ex) {
+
+        return new ResponseEntity<>(new ErrorResponse(ex.getMessage()), HttpStatus.BAD_REQUEST);
     }
 }

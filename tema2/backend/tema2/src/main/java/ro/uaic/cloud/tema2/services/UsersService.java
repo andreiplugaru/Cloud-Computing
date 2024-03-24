@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import ro.uaic.cloud.tema2.dtos.UserLoginDto;
 import ro.uaic.cloud.tema2.dtos.UserRegisterDto;
 import ro.uaic.cloud.tema2.dtos.UserRegisterResponseDto;
+import ro.uaic.cloud.tema2.exceptions.MultiavatarException;
 import ro.uaic.cloud.tema2.httpClients.AuthenticationClient;
 import ro.uaic.cloud.tema2.httpClients.MultiavatarClient;
 
@@ -49,8 +50,8 @@ public class UsersService {
     public byte[] getUserImage(String userName) {
         try(Response response = multiavatarClient.getImage(userName + ".png", MultiavatarClient.apiKey)) {
             return response.body().asInputStream().readAllBytes();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+        } catch (Exception e) {
+            throw new MultiavatarException();
         }
     }
 }

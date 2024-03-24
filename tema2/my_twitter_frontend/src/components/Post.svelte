@@ -40,7 +40,7 @@
 			{#await promise}
 				<p>Loading...</p>
 			{:then aiScore}
-				<p class={"text-gray-500 text-right " + (aiScore === -1 ? "hidden" : "")}>Ai score: {aiScore}
+				<p class={"text-gray-500 text-right " + (aiScore === -1 ? "hidden" : "")}>Ai score: {aiScore * 100 | 0}%
 					{#if aiScore > 0.5}
 					<i class="fa-solid fa-robot"></i>
 				{:else }
