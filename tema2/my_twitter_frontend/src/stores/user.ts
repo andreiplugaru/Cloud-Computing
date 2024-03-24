@@ -13,10 +13,13 @@ export const authenticate = async (userEmail:string) => {
 			'Content-Type': 'application/json'
 		}
 	});
-	if(response.ok){
-		const data = await response.json();
-		user.set(data);
 
+	const data = await response.json();
+	if(response.ok){
+		user.set(data);
+	}
+	else{
+		console.log(data);
 	}
 	return response;
 }

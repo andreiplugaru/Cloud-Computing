@@ -32,7 +32,7 @@
 		<p class="text-center">You must be logged in to create a post</p>
 	</div>
 	{:else }
-<div class="mx-auto bg-white shadow-md rounded-lg p-6 h-min self-center w-[1000px]">
+<div class="mx-auto bg-white shadow-md rounded-lg p-6 h-min self-center w-[600px]">
 	<form>
 		<div class="mb-4">
 			<label for="title" class="block text-gray-700 font-bold mb-2">Title</label>

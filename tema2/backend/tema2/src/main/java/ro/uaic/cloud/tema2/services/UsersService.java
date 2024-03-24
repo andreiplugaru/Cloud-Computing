@@ -36,7 +36,7 @@ public class UsersService {
         if(response.getStatusCode().is2xxSuccessful()){
             return new ResponseEntity<>(response.getBody(), response.getStatusCode());
         } else {
-            throw new RuntimeException("Failed to register user");
+            throw new RuntimeException("Failed to login user");
         }
     }
 
