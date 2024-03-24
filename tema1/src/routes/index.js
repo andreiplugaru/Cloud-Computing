@@ -1,5 +1,5 @@
 const userController = require('../users/user_controller');
-const {validateUser} = require('../validation/userValidation');
+const {validateUser, validateLoginUser} = require('../validation/userValidation');
 const {validatePost, validatePutPost} = require('../posts/post_validation');
 const {validateLike} = require('../likes/like_validation');
 const postController = require('../posts/post_controller');
@@ -13,6 +13,11 @@ const routes = {
         POST: (req, res) => {
             validateUser(req, res, userController.registerUser);
         }
+    },
+    "/users/login":{
+      POST: (req, res) => {
+          validateLoginUser(req, res, userController.loginUser);
+      }
     },
     "/users/:id": {
         PUT: (req, res) => {
@@ -30,6 +35,9 @@ const routes = {
         }
     },
     "/posts/:id": {
+        GET: (req, res) => {
+            postController.getPostById(req, res);
+        },
         PUT: (req, res) => {
             validatePutPost(req, res, postController.updatePost);
         },

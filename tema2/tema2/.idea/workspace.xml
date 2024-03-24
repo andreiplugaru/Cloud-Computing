@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e1397c63-7930-423c-bace-f85e98dd8f9f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../my_twitter_frontend/src/components/Post.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../my_twitter_frontend/src/components/UserControl.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../my_twitter_frontend/src/components/UserPosts.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../my_twitter_frontend/src/components/Users.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../my_twitter_frontend/src/consts.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../my_twitter_frontend/src/models/Like.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../my_twitter_frontend/src/models/Post.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../my_twitter_frontend/src/models/User.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../my_twitter_frontend/src/routes/add-post/+page.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../my_twitter_frontend/src/routes/add-post/+page.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../my_twitter_frontend/src/routes/home/+page.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../my_twitter_frontend/src/routes/home/+page.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../my_twitter_frontend/src/routes/login/+page.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../my_twitter_frontend/src/routes/login/+page.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../my_twitter_frontend/src/routes/signup/+page.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../my_twitter_frontend/src/routes/signup/+page.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../my_twitter_frontend/src/services/UserService.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../my_twitter_frontend/src/stores/post.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../my_twitter_frontend/src/stores/user.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tema1/src/posts/post_controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../tema1/src/posts/post_controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tema1/src/posts/post_repository.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../tema1/src/posts/post_repository.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tema1/src/posts/post_service.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../tema1/src/posts/post_service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tema1/src/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../tema1/src/routes/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tema1/src/users/user_controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../tema1/src/users/user_controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tema1/src/validation/userValidation.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../tema1/src/validation/userValidation.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Record" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2ds27emFqrSlUi4VelZ9vmKhDXI" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.Tema2Application.executor": "Run",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/Facultate/Semestrul6/CC/Cloud-Computing/tema2/backend/tema2",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="Tema2Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="tema2" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="ro.uaic.cloud.tema2.Tema2Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e1397c63-7930-423c-bace-f85e98dd8f9f" name="Changes" comment="" />
+      <created>1710782304150</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1710782304150</updated>
+      <workItem from="1710782305222" duration="23296000" />
+      <workItem from="1711041127620" duration="15671000" />
+      <workItem from="1711279376769" duration="2394000" />
+      <workItem from="1711314298523" duration="30000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

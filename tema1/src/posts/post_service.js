@@ -26,14 +26,20 @@ class PostService{
             throw new HttpException(404, "User not found");
         return await this.postRepository.updatePost(post_id, post);
     }
-    async getPostById(postId){
-        return await this.postRepository.getPostById(postId);
-    }
+    // async getPostById(postId){
+    //     return await this.postRepository.getPostById(postId);
+    // }
     async deletePost(postId){
         let post = await this.postRepository.getPostById(postId);
         if (post == null)
             throw new HttpException(404, "Post not found");
         return await this.postRepository.deletePost(postId);
+    }
+    async getPostById(postId){
+        let post = await this.postRepository.getPostById(postId);
+        if (post == null)
+            throw new HttpException(404, "Post not found");
+        return post;
     }
 }
 

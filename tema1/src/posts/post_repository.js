@@ -11,10 +11,10 @@ class PostRepository{
         return Post.findByIdAndUpdate(postId, post, {new: true});
     }
     async getPostById(postId){
-        return Post.findById(postId);
+        return Post.findById(postId).populate('likes').exec();
     }
     async deletePost(postId){
-        return Post.findByIdAndDelete(postId);
+        return Post.findByIdAndDelete(postId)
     }
     async addLike(postId, like){
         let post = await Post.findById(postId);

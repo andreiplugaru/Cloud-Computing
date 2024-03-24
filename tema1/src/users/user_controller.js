@@ -1,5 +1,6 @@
 const {userService} = require('../container');
 const response = require('../utils/response');
+const HttpException = require("../utils/HttpException");
 const getAllUsers = async (req, res) => {
     const users = await userService.getAllUsers();
     response(res, users)
@@ -8,6 +9,19 @@ const registerUser = async (req, res) => {
     try{
     const user = await userService.registerUser(req.body);
     response(res, user)}
+    catch(error){
+        response(res, {message: error.message}, error.status);
+    }
+}
+
+const loginUser = async (req, res) => {
+    try{
+        const user = await userService.getUserByEmail(req.body.email);
+        if(user == null){
+            throw new HttpException(404, "User not found");
+        }
+        response(res, user)
+    }
     catch(error){
         response(res, {message: error.message}, error.status);
     }
@@ -30,4 +44,4 @@ const updateUser = async (req, res) => {
 
 }
 
-module.exports = { getAllUsers, registerUser, updateUser };
+module.exports = { getAllUsers, registerUser, updateUser, loginUser };
